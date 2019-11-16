@@ -26,23 +26,12 @@ const Layout = props => {
           </a>
           <nav id="swup" class="site-head-left">
             <ul className="nav" role="menu">
-<<<<<<< HEAD
               <li className="nav-elements" role="menuitem">
                 <Link to={`/archive`}>Archive</Link>
-=======
-              <li className="nav-home nav-current" role="menuitem">
-                <Link to={`/`}>Home</Link>
->>>>>>> 28b4ee5deee3272941ef37cda8e23ff4880b06c0
               </li>
               <li className="nav-about" role="menuitem">
                 <Link to={`/about`}>About</Link>
               </li>
-<<<<<<< HEAD
-=======
-              <li className="nav-elements" role="menuitem">
-                <Link to={`/elements`}>Elements</Link>
-              </li>
->>>>>>> 28b4ee5deee3272941ef37cda8e23ff4880b06c0
             </ul>
           </nav>
           <div className="site-head-center">
@@ -53,11 +42,7 @@ const Layout = props => {
           <div className="site-head-right">
             <div className="social-links">
               <a
-<<<<<<< HEAD
                 href="https://facebook.com/profile.php?id=100010743251101"
-=======
-                href="https://www.facebook.com"
->>>>>>> 28b4ee5deee3272941ef37cda8e23ff4880b06c0
                 title="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -65,21 +50,12 @@ const Layout = props => {
                 Facebook
               </a>
               <a
-<<<<<<< HEAD
                 href="https://github.com/jjungeun"
                 title="Github"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Github
-=======
-                href="https://twitter.com"
-                title="Twitter"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Twitter
->>>>>>> 28b4ee5deee3272941ef37cda8e23ff4880b06c0
               </a>
               <Link
                 to={`/rss.xml`}
@@ -100,17 +76,6 @@ const Layout = props => {
       </main>
       <footer className="site-foot">
         &copy; {new Date().getFullYear()} <Link to={`/`}>{title}</Link> &mdash;
-<<<<<<< HEAD
-=======
-        Built with{" "}
-        <a
-          href="https://gatsbyjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Gatsby
-        </a>
->>>>>>> 28b4ee5deee3272941ef37cda8e23ff4880b06c0
       </footer>
     </div>
   )
