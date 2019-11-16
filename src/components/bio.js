@@ -25,11 +25,18 @@ function Bio() {
               }}
             />
             <p>
+<<<<<<< HEAD
+              Written by <strong>{author}</strong> who lives and studies in Seoul useful things.
+              <br />
+              <a href={`https://facebook.com/profile.php?${social.facebook}`}>
+                You should follow me on FB.
+=======
               Written by <strong>{author}</strong> who lives and works in San
               Francisco building useful things.
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
                 You should follow him on Twitter
+>>>>>>> 28b4ee5deee3272941ef37cda8e23ff4880b06c0
               </a>
             </p>
           </section>
@@ -43,7 +50,11 @@ const bioQuery = graphql`
   query BioQuery {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
+<<<<<<< HEAD
+        fixed(width: 50, height: 70) {
+=======
         fixed(width: 50, height: 50) {
+>>>>>>> 28b4ee5deee3272941ef37cda8e23ff4880b06c0
           ...GatsbyImageSharpFixed
         }
       }
@@ -52,7 +63,11 @@ const bioQuery = graphql`
       siteMetadata {
         author
         social {
+<<<<<<< HEAD
+          facebook
+=======
           twitter
+>>>>>>> 28b4ee5deee3272941ef37cda8e23ff4880b06c0
         }
       }
     }

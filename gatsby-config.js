@@ -8,7 +8,12 @@ module.exports = {
     description: siteConfig.description,
     siteUrl: urljoin(siteConfig.url, siteConfig.prefix),
     social: {
+<<<<<<< HEAD
+      facebook: siteConfig.facebook,
+      github: siteConfig.github
+=======
       twitter: siteConfig.twitter,
+>>>>>>> 28b4ee5deee3272941ef37cda8e23ff4880b06c0
     },
   },
   plugins: [

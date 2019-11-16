@@ -20,7 +20,11 @@ const BlogIndex = ({ data }, location) => {
         title="All posts"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
+<<<<<<< HEAD
+
+=======
       {/* <Bio /> */}
+>>>>>>> 28b4ee5deee3272941ef37cda8e23ff4880b06c0
       {data.site.siteMetadata.description && (
         <header className="page-head">
           <h2 className="page-head-title">

@@ -4,6 +4,10 @@ import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+<<<<<<< HEAD
+import Bio from "../components/bio"
+=======
+>>>>>>> 28b4ee5deee3272941ef37cda8e23ff4880b06c0
 
 import "../utils/normalize.css"
 import "../utils/css/screen.css"
@@ -14,7 +18,11 @@ const AboutPage = ({ data }, location) => {
   return (
     <Layout title={siteTitle}>
       <SEO title="ABout" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+<<<<<<< HEAD
+      <Bio />
+=======
 
+>>>>>>> 28b4ee5deee3272941ef37cda8e23ff4880b06c0
       <article className="post-content page-template no-image">
         <div className="post-content-body">
           <h2 id="clean-minimal-and-deeply-customisable-london-is-a-theme-made-for-people-who-appreciate-simple-lines-">
