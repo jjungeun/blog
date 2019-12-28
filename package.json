@@ -8,7 +8,7 @@
     "url": "https://github.com/ImedAdel/gatsby-london/issues"
   },
   "dependencies": {
-    "gatsby": "^2.4.2",
+    "gatsby": "^2.18.17",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-feed": "^2.2.0",
     "gatsby-plugin-google-analytics": "^2.0.19",
@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.5.1",
+    "babel-plugin-module-resolver": "^4.0.0",
     "husky": "^2.2.0",
     "postcss-color-function": "^4.1.0",
     "postcss-custom-properties": "^8.0.10",

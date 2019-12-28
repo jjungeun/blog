@@ -2,11 +2,11 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "components/layout"
+import SEO from "components/seo"
 
-import "../utils/normalize.css"
-import "../utils/css/screen.css"
+import "utils/normalize.css"
+import "utils/css/screen.css"
 
 const ArchivesPage = ({ data }, location) => {
   const siteTitle = data.site.siteMetadata.title
