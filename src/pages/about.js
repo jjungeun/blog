@@ -2,12 +2,12 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-import Layout from "components/layout"
-import SEO from "components/seo"
-import Bio from "components/bio"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Bio from "../components/bio"
 
-import "utils/normalize.css"
-import "utils/css/screen.css"
+import "../utils/normalize.css"
+import "../utils/css/screen.css"
 
 const AboutPage = ({ data }, location) => {
   const siteTitle = data.site.siteMetadata.title
