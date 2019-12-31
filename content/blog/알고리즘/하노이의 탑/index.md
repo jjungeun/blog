@@ -1,6 +1,7 @@
 ---
 title: 하노이의탑
 date: "2019-12-06T23:46:37.121Z"
+thumbnail: ./hanoi.jpeg
 tag: ["알고리즘","java"]
 ---
 
