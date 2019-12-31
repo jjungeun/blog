@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Tag from "../components/tag"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -23,8 +24,15 @@ class BlogPostTemplate extends React.Component {
             <h1 className="post-content-title">{post.frontmatter.title}</h1>
           </header>
 
+          {post.frontmatter.tag &&
+            post.frontmatter.tag.map(tag => {
+              return <Tag key={tag} name={tag} />
+            })}
+
           {post.frontmatter.description && (
-            <p class="post-content-excerpt">{post.frontmatter.description}</p>
+            <p className="post-content-excerpt">
+              {post.frontmatter.description}
+            </p>
           )}
 
           {post.frontmatter.thumbnail && (
@@ -72,6 +80,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tag
         thumbnail {
           childImageSharp {
             fluid(maxWidth: 1360) {
