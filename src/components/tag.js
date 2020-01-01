@@ -2,7 +2,7 @@ import React from "react"
 // import { Link } from "gatsby"
 
 function Tag({ name }) {
-  return <div>{name}</div>
+  return name + " "
 }
 
 export default Tag

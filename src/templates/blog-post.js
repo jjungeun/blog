@@ -23,11 +23,12 @@ class BlogPostTemplate extends React.Component {
           <header className="post-content-header">
             <h1 className="post-content-title">{post.frontmatter.title}</h1>
           </header>
-
-          {post.frontmatter.tag &&
-            post.frontmatter.tag.map(tag => {
-              return <Tag key={tag} name={tag} />
-            })}
+          <h3 className="post-content-title">
+            {post.frontmatter.tag &&
+              post.frontmatter.tag.map(tag => {
+                return <Tag key={tag} name={tag} />
+              })}
+          </h3>
 
           {post.frontmatter.description && (
             <p className="post-content-excerpt">
