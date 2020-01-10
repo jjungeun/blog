@@ -1,5 +1,5 @@
 import React from "react"
-import "./tag.css"
+// import "./tag.css"
 import { Link } from "gatsby"
 
 const TechTag = props => {

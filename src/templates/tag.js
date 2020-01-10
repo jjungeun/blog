@@ -1,13 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
-import "bootstrap/dist/css/bootstrap.css"
-import "../pages/index.css"
+// import "bootstrap/dist/css/bootstrap.css"
+// import "../pages/index.css"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Sidebar from "../components/sidebar/Sidebar"
-import TechTag from "../components/tags/TechTag"
+import TechTag from "../components/techtag"
 
 const Tag = ({ pageContext, data }) => {
   const posts = data.allMarkdownRemark.edges
@@ -54,9 +53,9 @@ const Tag = ({ pageContext, data }) => {
         ]}
       />
       <div className="index-main">
-        <div className="sidebar px-4 py-2">
+        {/* <div className="sidebar px-4 py-2">
           <Sidebar />
-        </div>
+        </div> */}
 
         <div className="post-list-main">
           <i>
@@ -130,15 +129,21 @@ export const pageQuery = graphql`
       edges {
         node {
           excerpt(pruneLength: 200)
-          html
-          id
-          frontmatter {
-            title
-            date(formatString: "MMMM, YYYY")
-            tags
-          }
           fields {
             slug
+          }
+          frontmatter {
+            date(formatString: "MMMM, YYYY")
+            title
+            descripttion
+            tags
+            thumbnail {
+              childImageSharp {
+                fluid(maxWidth: 1360) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

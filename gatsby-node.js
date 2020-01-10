@@ -1,4 +1,5 @@
 const path = require(`path`)
+const _ = require("lodash")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -49,9 +50,8 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     })
 
-    // Tag pages:
+    // Create tag pages:
     let tags = []
-    // Iterate through each post, putting all found tags into `tags`
     _.each(posts, edge => {
       if (_.get(edge, "node.frontmatter.tags")) {
         tags = tags.concat(edge.node.frontmatter.tags)
@@ -71,7 +71,6 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     })
-    return null
   })
 }
 
