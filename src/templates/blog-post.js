@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Tag from "../components/tag"
+import TechTag from "../components/techtag"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -24,9 +24,9 @@ class BlogPostTemplate extends React.Component {
             <h1 className="post-content-title">{post.frontmatter.title}</h1>
           </header>
           <h3 className="post-content-title">
-            {post.frontmatter.tag &&
-              post.frontmatter.tag.map(tag => {
-                return <Tag key={tag} name={tag} />
+            {post.frontmatter.tags &&
+              post.frontmatter.tags.map(tag => {
+                return <TechTag key={tag} name={tag} />
               })}
           </h3>
 
@@ -81,7 +81,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
-        tag
+        tags
         thumbnail {
           childImageSharp {
             fluid(maxWidth: 1360) {

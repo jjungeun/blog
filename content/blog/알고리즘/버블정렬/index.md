@@ -2,7 +2,7 @@
 title: 버블정렬
 date: "2019-12-31T23:46:37.121Z"
 thumbnail: ./bubblesort.png
-tag: ["알고리즘","java"]
+tags: ["알고리즘","java"]
 ---
 
 끝의 요소부터 두개씩 비교하여 정렬하는 방식이다.

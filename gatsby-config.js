@@ -6,6 +6,7 @@ module.exports = {
     title: siteConfig.name,
     author: siteConfig.author,
     description: siteConfig.description,
+    labels: siteConfig.labels,
     siteUrl: urljoin(siteConfig.url, siteConfig.prefix),
     social: {
       github: siteConfig.github,

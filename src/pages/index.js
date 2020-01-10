@@ -4,6 +4,7 @@ import { graphql, StaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostCard from "../components/postCard"
+import TechTag from "../components/techtag"
 
 // import "../utils/global.scss"
 import "../utils/normalize.css"
@@ -12,7 +13,24 @@ import "../utils/css/screen.css"
 const BlogIndex = ({ data }, location) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
+  const labels = data.site.siteMetadata.labels
   let postCounter = 0
+
+  const getTechTags = () => {
+    const techTags = []
+    labels.forEach(label => {
+      techTags.push(
+        <TechTag
+          tag={label.tag}
+          tech={label.tech}
+          name={label.name}
+          size={label.size}
+          color={label.color}
+        />
+      )
+    })
+    return techTags
+  }
 
   return (
     <Layout title={siteTitle}>
@@ -26,6 +44,9 @@ const BlogIndex = ({ data }, location) => {
             {data.site.siteMetadata.description}
           </h2>
         </header>
+      )}
+      {data.site.siteMetadata.labels && (
+        <div className="d-block">{getTechTags()}</div>
       )}
       <div className="post-feed">
         {posts.map(({ node }) => {
@@ -50,6 +71,13 @@ const indexQuery = graphql`
       siteMetadata {
         title
         description
+        labels {
+          tag
+          tech
+          name
+          size
+          color
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -63,7 +91,7 @@ const indexQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
-            tag
+            tags
             thumbnail {
               childImageSharp {
                 fluid(maxWidth: 1360) {
