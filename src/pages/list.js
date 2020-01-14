@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -30,7 +31,11 @@ const ListPage = ({ data }, location) => {
         const listName = dirPath[dirPath.length - 1]
         return (
           <div>
-            {listName}({list.totalCount})
+            <h3 className="post-content-title">
+              <Link to={`/${listName}/`}>
+                {listName}({list.totalCount})
+              </Link>
+            </h3>
           </div>
         )
       })}

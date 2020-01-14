@@ -71,6 +71,8 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     })
+
+    // Create list pages:
   })
 }
 
