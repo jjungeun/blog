@@ -1,33 +1,24 @@
 import React from "react"
-// import "./tag.css"
+import "../utils/css/components/tags.css"
 import { Link } from "gatsby"
+import InlineSVG from "svg-inline-react"
 
 const TechTag = props => {
-  const { tag, tech, name, size, color } = props
+  const { tag, tech, svg, size, color } = props
 
   return (
-    <div className="d-inline-block p-1">
+    <span className="tags">
       <Link to={`/tags/${tag}/`}>
-        <button className="tech-tag text-white">
+        <button className="tech-tag">
           <p className="d-inline">
-            <div className="d-inline" style={{ fontSize: size, color: color }}>
+            <span className="d-inline" style={{ fontSize: size, color: color }}>
               {tech}
-              <svg
-                role="img"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                width={size}
-                height={size}
-                style={{ fill: `${color}` }}
-              >
-                <title>{tech}</title>
-                <path d={name} />
-              </svg>
-            </div>
+              <InlineSVG src={svg} />
+            </span>
           </p>
         </button>
       </Link>
-    </div>
+    </span>
   )
 }
 

@@ -3,7 +3,7 @@ title: 버블정렬
 date: "2019-12-31T23:46:37.121Z"
 thumbnail: ./bubblesort.png
 descripttion: "bubble sort"
-tags: ["react"]
+tags: ["algorithm","java"]
 ---
 
 끝의 요소부터 두개씩 비교하여 정렬하는 방식이다.

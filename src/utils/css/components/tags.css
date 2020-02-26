@@ -1,0 +1,11 @@
+.tags {
+  margin-right: 1rem;
+}
+
+.tech-tag {
+  background: white;
+  border-radius: 20%;
+  border-color: transparent;
+  font-family: "monospace";
+  font-size: 0.5rem;
+}

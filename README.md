@@ -1,3 +1,5 @@
+find logo in <a href="https://www.vectorlogo.zone/"> this site</a> and add label to siteConfig.js (width and height should be 24)
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">

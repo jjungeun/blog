@@ -2,7 +2,7 @@
 title: React와 Firebase 시작하기
 date: "2020-01-01T23:46:37.121Z"
 descripttion: "React & Firebase"
-tags: ["react"]
+tags: ["react", "nodejs", "firebase"]
 ---
 
 ### npm 설치

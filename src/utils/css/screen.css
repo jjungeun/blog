@@ -63,6 +63,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 13vw 0;
+  padding-bottom: 5vw;
   max-width: 70%;
   margin: auto;
   text-align: center;
@@ -710,5 +711,14 @@ body {
 .page-template .post-content-body h1,
 .page-template .post-content-body h2,
 .page-template .post-content-body h3 {
+  text-align: center;
+}
+
+/*
+/* ---------------------------------------------------------- */
+.tag-block {
+  margin-left: 20vw;
+  margin-right: 20vw;
+  margin-bottom: 5vw;
   text-align: center;
 }

@@ -6,10 +6,9 @@ import SEO from "../components/seo"
 import PostCard from "../components/postCard"
 import TechTag from "../components/techtag"
 
-// import "../utils/global.scss"
 import "../utils/normalize.css"
 import "../utils/css/screen.css"
-//TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
+
 const BlogIndex = ({ data }, location) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
@@ -21,9 +20,10 @@ const BlogIndex = ({ data }, location) => {
     labels.forEach(label => {
       techTags.push(
         <TechTag
+          key={label.tag}
           tag={label.tag}
           tech={label.tech}
-          name={label.name}
+          svg={label.svg}
           size={label.size}
           color={label.color}
         />
@@ -46,7 +46,7 @@ const BlogIndex = ({ data }, location) => {
         </header>
       )}
       {data.site.siteMetadata.labels && (
-        <div className="d-block">{getTechTags()}</div>
+        <div className="tag-block">{getTechTags()}</div>
       )}
       <div className="post-feed">
         {posts.map(({ node }) => {
@@ -74,7 +74,7 @@ const indexQuery = graphql`
         labels {
           tag
           tech
-          name
+          svg
           size
           color
         }

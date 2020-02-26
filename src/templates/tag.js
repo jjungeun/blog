@@ -1,17 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
-// import "bootstrap/dist/css/bootstrap.css"
-// import "../pages/index.css"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TechTag from "../components/techtag"
 
 const Tag = ({ pageContext, data }) => {
+  const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
   const labels = data.site.siteMetadata.labels
-  console.log(pageContext.tag)
   const { tag } = pageContext
   const { totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
@@ -25,10 +23,10 @@ const Tag = ({ pageContext, data }) => {
         if (tag === label.tag) {
           techTags.push(
             <TechTag
-              key={i}
+              key={label.tag}
               tag={label.tag}
               tech={label.tech}
-              name={label.name}
+              svg={label.svg}
               size={label.size}
               color={label.color}
             />
@@ -40,7 +38,7 @@ const Tag = ({ pageContext, data }) => {
   }
 
   return (
-    <Layout>
+    <Layout title={siteTitle}>
       <SEO
         title="Home"
         keywords={[
@@ -53,10 +51,6 @@ const Tag = ({ pageContext, data }) => {
         ]}
       />
       <div className="index-main">
-        {/* <div className="sidebar px-4 py-2">
-          <Sidebar />
-        </div> */}
-
         <div className="post-list-main">
           <i>
             <h2 className="heading">{tagHeader}</h2>
@@ -71,10 +65,15 @@ const Tag = ({ pageContext, data }) => {
                 <small className="d-block text-info">
                   Posted on {post.node.frontmatter.date}
                 </small>
-                <p className="mt-3 d-inline">{post.node.excerpt}</p>
-                <Link to={post.node.fields.slug} className="text-primary">
-                  <small className="d-inline-block ml-3"> Read full post</small>
-                </Link>
+                <p className="mt-3 d-inline">
+                  {post.node.excerpt}
+                  <Link to={post.node.fields.slug} className="text-primary">
+                    <small className="d-inline-block ml-3">
+                      {" "}
+                      Read full post
+                    </small>
+                  </Link>
+                </p>
                 <div className="d-block">{getTechTags(tags)}</div>
               </div>
             )
@@ -114,7 +113,7 @@ export const pageQuery = graphql`
         labels {
           tag
           tech
-          name
+          svg
           size
           color
         }

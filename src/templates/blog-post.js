@@ -1,4 +1,5 @@
 import React from "react"
+
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -23,12 +24,23 @@ class BlogPostTemplate extends React.Component {
           <header className="post-content-header">
             <h1 className="post-content-title">{post.frontmatter.title}</h1>
           </header>
-          <h3 className="post-content-title">
-            {post.frontmatter.tags &&
-              post.frontmatter.tags.map(tag => {
-                return <TechTag key={tag} name={tag} />
-              })}
-          </h3>
+
+          {post.frontmatter.tags &&
+            post.frontmatter.tags.map(tag => {
+              return (
+                console.log(tag),
+                (
+                  <div className="d-block">
+                    <TechTag
+                      key={tag}
+                      tag={tag}
+                      tech={tag.tech}
+                      svg={tag.svg}
+                    />
+                  </div>
+                )
+              )
+            })}
 
           {post.frontmatter.description && (
             <p className="post-content-excerpt">
