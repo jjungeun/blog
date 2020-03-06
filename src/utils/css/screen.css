@@ -256,6 +256,13 @@ body {
   fill: var(--color-base);
 }
 
+.tag-block {
+  margin-left: 20vw;
+  margin-right: 20vw;
+  margin-bottom: 5vw;
+  text-align: center;
+}
+
 /* Mobile Nav Menu
 /* ---------------------------------------------------------- */
 
@@ -509,12 +516,21 @@ body {
 .post-content-header {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 0 0 5vw;
 }
 
 .post-content-title {
-  margin: 0 0 3vw;
+  margin: 0 0 1vw;
   color: var(--color-base);
+  text-align: center;
+}
+
+.post-date {
+  text-align: right;
+  margin: 0 0 1vw;
+}
+
+.post-tag {
   text-align: center;
 }
 
@@ -535,7 +551,7 @@ body {
 .post-content-image {
   margin: 4vw 0;
   position: relative;
-  width: 75vw;
+  width: 40vw;
   min-width: 100%;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
@@ -543,7 +559,7 @@ body {
 }
 
 .post-content-body {
-  font-size: 1.9rem;
+  font-size: 2rem;
   line-height: 1.65em;
 }
 @media (max-width: 500px) {
@@ -596,7 +612,8 @@ body {
   font-size: 0.8em;
   line-height: 1em;
   font-weight: 400 !important;
-  background: var(--color-bg);
+  /* background: var(--color-bg); */
+  background: #e4dedc;
   border-radius: 3px;
 }
 
@@ -711,14 +728,5 @@ body {
 .page-template .post-content-body h1,
 .page-template .post-content-body h2,
 .page-template .post-content-body h3 {
-  text-align: center;
-}
-
-/*
-/* ---------------------------------------------------------- */
-.tag-block {
-  margin-left: 20vw;
-  margin-right: 20vw;
-  margin-bottom: 5vw;
   text-align: center;
 }

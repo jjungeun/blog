@@ -10,7 +10,31 @@ import TechTag from "../components/techtag"
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
+    const metadata = this.props.data.site.siteMetadata
+    const siteTitle = metadata.title
+    const labels = metadata.labels
+    const tags = post.frontmatter.tags
+
+    const getTechTags = () => {
+      const techTags = []
+      tags.forEach((tag, i) => {
+        labels.forEach(label => {
+          if (tag === label.tag) {
+            techTags.push(
+              <TechTag
+                key={label.tag}
+                tag={label.tag}
+                tech={label.tech}
+                svg={label.svg}
+                size={label.size}
+                color={label.color}
+              />
+            )
+          }
+        })
+      })
+      return techTags
+    }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -23,24 +47,13 @@ class BlogPostTemplate extends React.Component {
         >
           <header className="post-content-header">
             <h1 className="post-content-title">{post.frontmatter.title}</h1>
+            {post.frontmatter.date && (
+              <div className="post-date">{post.frontmatter.date}</div>
+            )}
+            {post.frontmatter.tags && (
+              <div className="post-tag">{getTechTags()}</div>
+            )}
           </header>
-
-          {post.frontmatter.tags &&
-            post.frontmatter.tags.map(tag => {
-              return (
-                console.log(tag),
-                (
-                  <div className="d-block">
-                    <TechTag
-                      key={tag}
-                      tag={tag}
-                      tech={tag.tech}
-                      svg={tag.svg}
-                    />
-                  </div>
-                )
-              )
-            })}
 
           {post.frontmatter.description && (
             <p className="post-content-excerpt">
@@ -83,6 +96,13 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        labels {
+          tag
+          tech
+          svg
+          size
+          color
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

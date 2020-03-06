@@ -42,9 +42,9 @@ $ sudo npm install -g firebase-tools
 
 그리고 [Firebase페이지](https://firebase.google.com/)로 가서 프로젝트를 추가한다. 클릭 몇번으로 간단히 만들 수 있다.
 
-다시 터미너로 돌아와 `firebase login`을 하여 구글계정로그인을 하고 `firebase init`을 입력한다.
+다시 터미널로 돌아와 `firebase login`을 하여 구글계정로그인을 하고 `firebase init`을 입력한다.
 
-![](./img/1569302633211.png)
+![1569302633211](./img/1569302633211.png)
 
 Fireabase의 어떤 기능을 설치할지 옵션을 선택한다. (본 프로젝트에선 Database와 Hosting기능 사용)
 
