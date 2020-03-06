@@ -19,18 +19,16 @@ const ListPage = ({ data }, location) => {
         title="All posts"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
-      {data.site.siteMetadata.description && (
-        <header className="page-head">
-          <h2 className="page-head-title">
-            {data.site.siteMetadata.description}
-          </h2>
-        </header>
-      )}
+
+      <header className="page-head">
+        <h2 className="page-head-title">Log List</h2>
+      </header>
+
       {lists.map(list => {
         const dirPath = list.fieldValue.split("/")
         const listName = dirPath[dirPath.length - 1]
         return (
-          <div>
+          <div key={listName}>
             <h3 className="post-content-title">
               <Link to={`/${listName}/`}>
                 {listName}({list.totalCount})
@@ -48,7 +46,6 @@ const indexQuery = graphql`
     site {
       siteMetadata {
         title
-        description
       }
     }
     allDirectory(

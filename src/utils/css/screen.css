@@ -62,8 +62,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 13vw 0;
-  padding-bottom: 5vw;
+  padding: 7vw 0;
+  padding-bottom: 3vw;
   max-width: 70%;
   margin: auto;
   text-align: center;
@@ -398,10 +398,10 @@ body {
 
 .post-card {
   position: relative;
-  flex: 1 1 50%;
+  flex: 1 1 30%;
   display: flex;
   position: relative;
-  height: 35vw;
+  height: 20vw;
   background: linear-gradient(135deg, #1f1f1f 0%, #111 100%) center center;
   background-size: cover;
   overflow: hidden;
@@ -435,7 +435,6 @@ body {
   bottom: 0;
   left: 0;
   color: #fff;
-  background: rgba(0, 0, 0, 0.1);
   opacity: 1;
   transition: opacity 0.5s cubic-bezier(0.33, 0, 0.2, 1);
 }
@@ -730,3 +729,6 @@ body {
 .page-template .post-content-body h3 {
   text-align: center;
 }
+
+/* List Page
+/* ---------------------------------------------------------- */
