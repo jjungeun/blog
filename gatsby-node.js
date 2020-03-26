@@ -11,7 +11,7 @@ exports.createPages = async ({ graphql, actions }) => {
       {
         allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
+          limit: 10
         ) {
           edges {
             node {
@@ -25,6 +25,18 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
+        allDirectory(
+          filter: { dir: { regex: "/content/blog//" }, name: { ne: "img" } }
+        ) {
+          group(field: dir) {
+            fieldValue
+            nodes {
+              name
+              dir
+              absolutePath
+            }
+          }
+        }
       }
     `
   ).then(result => {
@@ -32,9 +44,8 @@ exports.createPages = async ({ graphql, actions }) => {
       throw result.errors
     }
 
-    // Create blog posts pages.
     const posts = result.data.allMarkdownRemark.edges
-
+    // Create blog posts pages.
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
@@ -50,17 +61,30 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     })
 
-    // Create tag pages:
+    // Create category pages.
+    const categories = result.data.allDirectory.group
+    categories.forEach(category => {
+      const categoryPath = category.fieldValue.split("/")
+      const categoryName = categoryPath[categoryPath.length - 1]
+      createPage({
+        path: `/category/${categoryName}/`,
+        component: path.resolve("src/templates/category-post.js"),
+        context: {
+          categoryName: categoryName,
+          categoryReg: `/${categoryName}/`,
+        },
+      })
+    })
+
+    // Create tag pages.
     let tags = []
     _.each(posts, edge => {
       if (_.get(edge, "node.frontmatter.tags")) {
         tags = tags.concat(edge.node.frontmatter.tags)
       }
     })
-
     // Eliminate duplicate tags
     tags = _.uniq(tags)
-
     // Make tag pages
     tags.forEach(tag => {
       createPage({
@@ -71,8 +95,6 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     })
-
-    // Create list pages:
   })
 }
 

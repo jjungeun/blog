@@ -27,7 +27,7 @@ const Layout = props => {
           <nav id="swup" className="site-head-left">
             <ul className="nav" role="menu">
               <li className="nav-elements" role="menuitem">
-                <Link to={`/list`}>List</Link>
+                <Link to={`/category/`}>Category</Link>
               </li>
               <li className="nav-elements" role="menuitem">
                 <Link to={`/archive`}>Archive</Link>

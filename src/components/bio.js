@@ -17,18 +17,24 @@ function Bio() {
         const { author } = data.site.siteMetadata
         return (
           <section>
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              imgStyle={{
-                borderRadius: `50%`,
+            <div
+              style={{
+                padding: "1rem 0",
+                textAlign: "center",
               }}
-            />
-            <p>
-              Written by <strong>{author}</strong> who lives and studies in
-              Seoul useful things.
-              <br />
-            </p>
+            >
+              <Image
+                fixed={data.avatar.childImageSharp.fixed}
+                alt={author}
+                imgStyle={{
+                  borderRadius: `20%`,
+                }}
+              />
+              <p>Interested in cloud, linux system and web.</p>
+              <p>
+                <strong>jungeun9729@gmail.com</strong>
+              </p>
+            </div>
           </section>
         )
       }}
@@ -40,7 +46,7 @@ const bioQuery = graphql`
   query BioQuery {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 50, height: 50) {
+        fixed(width: 150, height: 150) {
           ...GatsbyImageSharpFixed
         }
       }

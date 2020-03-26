@@ -1,5 +1,20 @@
 find logo in <a href="https://www.vectorlogo.zone/"> this site</a> and add label to siteConfig.js (width and height should be 24)
 
+추가기능
+
+- tag기능
+- category기능
+
+TODO list
+
+- Archive페이지
+- netfly에 올리기
+
+- SEO
+
+- headings로 글 안에서 index만들기
+- About에 터미널 화면 만들기
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
@@ -27,7 +42,6 @@ A custom, image-centric theme for Gatsby. Made for publishers and portfolios wit
     <img alt="Gatsby" src="./content/assets/screenshot-desktop.jpg" />
   </a>
 </p>
-
 ---
 
 _I haven't really spent any time adding the JS animations or removing any unused CSS (automatically done by PurgeCSS). You will also need HTML in your Markdown file in order to add CSS classes to your images_

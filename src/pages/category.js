@@ -8,10 +8,9 @@ import SEO from "../components/seo"
 import "../utils/normalize.css"
 import "../utils/css/screen.css"
 
-const ListPage = ({ data }, location) => {
+const CategoryPage = ({ data }, location) => {
   const siteTitle = data.site.siteMetadata.title
-  const lists = data.allDirectory.group
-  // console.log(lists)
+  const categories = data.allDirectory.group
 
   return (
     <Layout title={siteTitle}>
@@ -21,17 +20,17 @@ const ListPage = ({ data }, location) => {
       />
 
       <header className="page-head">
-        <h2 className="page-head-title">Log List</h2>
+        <h2 className="page-head-title">Categories</h2>
       </header>
 
-      {lists.map(list => {
-        const dirPath = list.fieldValue.split("/")
-        const listName = dirPath[dirPath.length - 1]
+      {categories.map(category => {
+        const dirPath = category.fieldValue.split("/")
+        const categoryName = dirPath[dirPath.length - 1]
         return (
-          <div key={listName}>
+          <div key={categoryName}>
             <h3 className="post-content-title">
-              <Link to={`/${listName}/`}>
-                {listName}({list.totalCount})
+              <Link to={`/category/${categoryName}/`}>
+                {categoryName} ({category.totalCount})
               </Link>
             </h3>
           </div>
@@ -54,11 +53,6 @@ const indexQuery = graphql`
       group(field: dir) {
         totalCount
         fieldValue
-        nodes {
-          name
-          dir
-          absolutePath
-        }
       }
     }
   }
@@ -68,7 +62,7 @@ export default props => (
   <StaticQuery
     query={indexQuery}
     render={data => (
-      <ListPage location={props.location} data={data} {...props} />
+      <CategoryPage location={props.location} data={data} {...props} />
     )}
   />
 )

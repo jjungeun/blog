@@ -6,16 +6,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TechTag from "../components/techtag"
 
-const Tag = ({ pageContext, data }) => {
+const Category = ({ pageContext, data }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
   const labels = data.site.siteMetadata.labels
-  const { tag } = pageContext
-  const { totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
-
+  const { categoryName } = pageContext
   const getTechTags = tags => {
     const techTags = []
     tags.forEach((tag, i) => {
@@ -53,7 +48,7 @@ const Tag = ({ pageContext, data }) => {
       <div className="index-main">
         <div className="post-list-main">
           <i>
-            <h2 className="heading">{tagHeader}</h2>
+            <h2 className="heading">{categoryName}</h2>
           </i>
           {posts.map((post, id) => {
             const tags = post.node.frontmatter.tags
@@ -61,19 +56,11 @@ const Tag = ({ pageContext, data }) => {
               <div key={id} className="container mt-5">
                 <Link to={post.node.fields.slug} className="text-dark">
                   <h2 className="heading">{post.node.frontmatter.title}</h2>
+                  <p className="mt-3 d-inline">{post.node.excerpt}</p>
                 </Link>
                 <small className="d-block text-info">
                   Posted on {post.node.frontmatter.date}
                 </small>
-                <p className="mt-3 d-inline">
-                  {post.node.excerpt}
-                  <Link to={post.node.fields.slug} className="text-primary">
-                    <small className="d-inline-block ml-3">
-                      {" "}
-                      Read full post
-                    </small>
-                  </Link>
-                </p>
                 <div className="d-block">{getTechTags(tags)}</div>
               </div>
             )
@@ -84,28 +71,15 @@ const Tag = ({ pageContext, data }) => {
   )
 }
 
-Tag.propTypes = {
+Category.propTypes = {
   pageContext: PropTypes.shape({
-    tag: PropTypes.string.isRequired,
-  }),
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      totalCount: PropTypes.number.isRequired,
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
-            }),
-          }),
-        }).isRequired
-      ),
-    }),
+    categoryName: PropTypes.string.isRequired,
+    categoryReg: PropTypes.string.isRequired,
   }),
 }
 
 export const pageQuery = graphql`
-  query($tag: String) {
+  query($categoryReg: String) {
     site {
       siteMetadata {
         title
@@ -122,9 +96,8 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      filter: { fields: { slug: { regex: $categoryReg } } }
     ) {
-      totalCount
       edges {
         node {
           excerpt(pruneLength: 200)
@@ -136,13 +109,6 @@ export const pageQuery = graphql`
             title
             descripttion
             tags
-            thumbnail {
-              childImageSharp {
-                fluid(maxWidth: 1360) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
           }
         }
       }
@@ -150,4 +116,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default Tag
+export default Category
