@@ -18,24 +18,24 @@ const CategoryPage = ({ data }, location) => {
         title="All posts"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
-
-      <header className="page-head">
-        <h2 className="page-head-title">Categories</h2>
-      </header>
-
-      {categories.map(category => {
-        const dirPath = category.fieldValue.split("/")
-        const categoryName = dirPath[dirPath.length - 1]
-        return (
-          <div key={categoryName}>
-            <h3 className="post-content-title">
-              <Link to={`/category/${categoryName}/`}>
-                {categoryName} ({category.totalCount})
-              </Link>
-            </h3>
-          </div>
-        )
-      })}
+      <div className="category-block">
+        <header className="page-head">
+          <h2 className="page-head-title">Categories</h2>
+        </header>
+        {categories.map(category => {
+          const dirPath = category.fieldValue.split("/")
+          const categoryName = dirPath[dirPath.length - 1]
+          return (
+            <div key={categoryName}>
+              <li className="category-title">
+                <Link to={`/category/${categoryName}/`}>
+                  {categoryName} ({category.totalCount})
+                </Link>
+              </li>
+            </div>
+          )
+        })}
+      </div>
     </Layout>
   )
 }

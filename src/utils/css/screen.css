@@ -730,5 +730,25 @@ body {
   text-align: center;
 }
 
-/* List Page
+/* Category Page
 /* ---------------------------------------------------------- */
+.category-block {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.category-title {
+  text-align: center;
+  font-size: xx-large;
+}
+
+/* Archive Page
+/* ---------------------------------------------------------- */
+.archive-block {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.archive-title {
+  font-size: x-large;
+}

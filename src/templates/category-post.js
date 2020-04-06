@@ -45,27 +45,29 @@ const Category = ({ pageContext, data }) => {
           `graphql`,
         ]}
       />
-      <div className="index-main">
-        <div className="post-list-main">
-          <i>
-            <h2 className="heading">{categoryName}</h2>
-          </i>
-          {posts.map((post, id) => {
-            const tags = post.node.frontmatter.tags
-            return (
-              <div key={id} className="container mt-5">
-                <Link to={post.node.fields.slug} className="text-dark">
-                  <h2 className="heading">{post.node.frontmatter.title}</h2>
-                  <p className="mt-3 d-inline">{post.node.excerpt}</p>
+      <div className="category-block">
+        <h2>{categoryName}</h2>
+        {posts.map((post, id) => {
+          const tags = post.node.frontmatter.tags
+          return (
+            <div key={id} className="container mt-5">
+              <li>
+                <Link to={post.node.fields.slug}>
+                  <strong style={{ fontSize: "x-large" }}>
+                    {post.node.frontmatter.title}
+                  </strong>
+                  <p className="mt-3 d-inline" style={{ color: "black" }}>
+                    {post.node.excerpt}
+                  </p>
                 </Link>
                 <small className="d-block text-info">
                   Posted on {post.node.frontmatter.date}
                 </small>
                 <div className="d-block">{getTechTags(tags)}</div>
-              </div>
-            )
-          })}
-        </div>
+              </li>
+            </div>
+          )
+        })}
       </div>
     </Layout>
   )
