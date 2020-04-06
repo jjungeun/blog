@@ -29,7 +29,7 @@ export default props => (
           background: colors[Math.floor(Math.random() * colors.length)],
         }}
       >
-        <h2 className="post-card-title">
+        <h2 className="post-card-title" style={{ wordBreak: "keep-all" }}>
           {props.node.frontmatter.title || props.node.fields.slug}
         </h2>
       </div>
