@@ -13,3 +13,5 @@ TODO..
 - SEO
 - headings로 글 안에서 index만들기
 - About에 터미널 화면 만들기
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/90714be2-eacc-4154-84aa-0d62c2878ec3/deploy-status)](https://app.netlify.com/sites/jjunglog/deploys)
