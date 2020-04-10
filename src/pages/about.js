@@ -62,7 +62,7 @@ const AboutPage = ({ data }, location) => {
           </p>
           <p>
             <li>
-              <a href="https://github.com/soda-infra">Aladin</a>
+              <a href="https://github.com/soda-infra">Aladdin</a>
             </li>
             <div style={subStyle}>
               오픈소스인 kiali 커스터마이징하여 쿠버네티스 기반의 마이크로서비스
