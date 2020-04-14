@@ -2,7 +2,7 @@
 title: "[Ubuntu 18.04]minikube 설치하기"
 date: "2020-04-16T11:46:37.121Z"
 descripttion: "Kubernetes"
-tags: ["kubernetes", "Ubuntu"]
+tags: ["kubernetes", "ubuntu"]
 ---
 
 우선 가상화 지원 여부를 알기 위해 다음의 명령을 실행하고 출력이 나오는지 확인한다.

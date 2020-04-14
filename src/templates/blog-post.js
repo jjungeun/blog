@@ -73,7 +73,7 @@ class BlogPostTemplate extends React.Component {
 
           <div
             className="post-content-body"
-            dangerouslySetInnerHTML={{ __html: post.html }}
+            dangerouslySetInnerHTML={{ __html: `<div>${post.html}</div>` }}
           />
 
           <footer className="post-content-footer">
