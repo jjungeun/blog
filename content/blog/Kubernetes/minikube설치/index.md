@@ -1,6 +1,6 @@
 ---
-title: [Ubuntu 18.04]minikube 설치하기
-date: "2020-04-16T23:46:37.121Z"
+title: "[Ubuntu 18.04]minikube 설치하기"
+date: "2020-04-16T11:46:37.121Z"
 descripttion: "Kubernetes"
 tags: ["kubernetes", "Ubuntu"]
 ---
