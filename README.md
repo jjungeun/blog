@@ -1,4 +1,4 @@
-**Based on [London](https://github.com/TryGhost/London) for Ghost**
+**사용한 테마 : [London](https://github.com/TryGhost/London)**
 
 추가한 기능들 (react & graphQL)
 
