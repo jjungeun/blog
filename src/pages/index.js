@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 
-import { Layout } from "../components/layout"
-import { SEO } from "../components/seo"
-import { PostCard } from "../components/postCard"
-import { TechTag } from "../components/techtag"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import PostCard from "../components/postCard"
+import TechTag from "../components/techtag"
 
 import "../utils/normalize.css"
 import "../utils/css/screen.css"
