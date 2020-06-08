@@ -8,6 +8,22 @@ module.exports = {
   github: "https://github.com/jjungeun",
   labels: [
     {
+      tag: "aws",
+      tech: "Aws",
+      svg:
+        '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32"><path d="M15.63 31.388l-7.135-2.56V18.373l7.135 2.43zm1.3 0l7.135-2.56V18.373l-7.135 2.432zm-7.7-13.8l7.2-2.033 6.696 2.16-6.696 2.273zm-2.092-.8L0 14.22V3.75l7.135 2.43zm1.307 0l7.135-2.56V3.75L8.443 6.192zm-7.7-13.8l7.2-2.043 6.696 2.16-6.696 2.273zm23.052 13.8l-7.135-2.56V3.75l7.135 2.43zm1.3 0l7.135-2.56V3.75l-7.135 2.43zm-7.7-13.8l7.2-2.033 6.696 2.16-6.696 2.273z" fill="#f90" fill-rule="evenodd"/></svg>',
+      size: 20,
+      color: "#ff6600",
+    },
+    {
+      tag: "terraform",
+      tech: "Terraform",
+      svg:
+        '<svg height="24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd" transform="matrix(.826767 0 0 .826767 8.416322 51.138164)"><path d="m39.1 15.557v-24.43l-21.16-12.22v24.43zm0-27.1-21.16-12.22v-24.44l21.16 12.22z" fill="#5c4ee5"/><path d="m62.6-23.773v-24.44l-21.17 12.22v24.44z" fill="#4040b2"/><path d="m15.62-25.193v-24.44l-21.16-12.22v24.44z" fill="#5c4ee5"/></g></svg>',
+      size: 20,
+      color: "#ff6600",
+    },
+    {
       tag: "ubuntu",
       tech: "Ubuntu",
       svg:
