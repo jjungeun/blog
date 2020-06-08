@@ -2,7 +2,7 @@
 title: "EKS 클러스터 구축하기 with Terraform"
 date: "2020-05-28T11:46:37.121Z"
 descripttion: "Kubernetes"
-tags: ["kubernetes", "terrafrom", "aws"]
+tags: ["kubernetes", "terraform", "aws"]
 ---
 
 사용 aws 서비스
