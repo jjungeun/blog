@@ -1,12 +1,13 @@
-**Based on [London](https://github.com/TryGhost/London) for Ghost**
+**사용한 테마 : [London](https://github.com/TryGhost/London)**
 
-Additional functions
+추가한 기능들 (react & graphQL)
 
-- Tag with logo
-- Categorize
-- Archive
+- 태그기능
+- 카테고리(Categorize)
+- 아카이브(Archive)
 
-find logo in <a href="https://www.vectorlogo.zone/"> this site</a> and add label to siteConfig.js (width and height should be 24)
+<a href="https://www.vectorlogo.zone/">여기</a>서 로고 찾아서 siteConfig.js에 추가하면 태그 옆에 로고를 붙일 수 있습니다.
+(width와 height는 24여야합니다.)
 
 TODO..
 
