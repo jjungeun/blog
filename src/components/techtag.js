@@ -13,7 +13,7 @@ const TechTag = props => {
           <p className="d-inline">
             <span className="d-inline" style={{ fontSize: size, color: color }}>
               {tech}
-              <InlineSVG src={svg} />
+              <InlineSVG className="tag-icon" src={svg} />
             </span>
           </p>
         </button>

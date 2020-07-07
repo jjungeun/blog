@@ -8,4 +8,9 @@
   border-color: transparent;
   font-family: "monospace";
   font-size: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag-icon {
+  margin-left: 0.5rem;
 }

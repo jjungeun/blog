@@ -507,7 +507,7 @@ body {
 /* ---------------------------------------------------------- */
 
 .post-content {
-  max-width: 720px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 6vw 0;
 }
