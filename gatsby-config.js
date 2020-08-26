@@ -99,8 +99,17 @@ module.exports = {
         // icon: `${__dirname}/content/assets/gatsby-icon.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: `${siteConfig.url}`,
+        sitemap: `${siteConfig.url}/sitemap.xml`,
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     `gatsby-plugin-netlify`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
   ],
 }
