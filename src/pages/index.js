@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostCard from "../components/postCard"
 import TechTag from "../components/techtag"
+import Helmet from "react-helmet"
 
 import "../utils/normalize.css"
 import "../utils/css/screen.css"

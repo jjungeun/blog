@@ -107,7 +107,18 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
-    `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-8MTV1EFZ45", // Google Analytics / GA
+          // "AW-XXXXXXXXX" // Google Ads / Adwords / AW
+        ],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    }`gatsby-plugin-netlify`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
