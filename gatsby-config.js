@@ -14,6 +14,18 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-8MTV1EFZ45", // Google Analytics / GA
+          // "AW-XXXXXXXXX" // Google Ads / Adwords / AW
+        ],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
@@ -105,18 +117,6 @@ module.exports = {
         host: `${siteConfig.url}`,
         sitemap: `${siteConfig.url}/sitemap.xml`,
         policy: [{ userAgent: "*", allow: "/" }],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [
-          "G-8MTV1EFZ45", // Google Analytics / GA
-          // "AW-XXXXXXXXX" // Google Ads / Adwords / AW
-        ],
-        pluginConfig: {
-          head: true,
-        },
       },
     },
     `gatsby-plugin-netlify`,
