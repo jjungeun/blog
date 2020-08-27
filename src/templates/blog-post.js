@@ -6,6 +6,7 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TechTag from "../components/techtag"
+import Utterances from "../components/utterances"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -75,6 +76,8 @@ class BlogPostTemplate extends React.Component {
             className="post-content-body"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
+
+          <Utterances />
 
           <footer className="post-content-footer">
             {/* There are two options for how we display the byline/author-info.
