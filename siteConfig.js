@@ -2,7 +2,7 @@ module.exports = {
   name: "JJunglog",
   shortName: "JJunglog",
   description: "Development Log",
-  url: "https://jjunglog.netlify.com",
+  url: "https://jjunglog.netlify.app",
   prefix: "/",
   author: "jjungeun",
   github: "https://github.com/jjungeun",

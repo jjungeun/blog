@@ -3,17 +3,15 @@ import { graphql, StaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import PostCard from "../components/postCard"
 import TechTag from "../components/techtag"
+import ArchiveBlock from "../components/archiveBlock"
 
 import "../utils/normalize.css"
 import "../utils/css/screen.css"
 
 const BlogIndex = ({ data }, location) => {
   const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
   const labels = data.site.siteMetadata.labels
-  let postCounter = 0
 
   const getTechTags = () => {
     const techTags = []
@@ -48,19 +46,7 @@ const BlogIndex = ({ data }, location) => {
       {data.site.siteMetadata.labels && (
         <div className="tag-block">{getTechTags()}</div>
       )}
-      <div className="post-feed">
-        {posts.map(({ node }) => {
-          postCounter++
-          return (
-            <PostCard
-              key={node.fields.slug}
-              count={postCounter}
-              node={node}
-              postClass={`post`}
-            />
-          )
-        })}
-      </div>
+      <ArchiveBlock data={data} />
     </Layout>
   )
 }
@@ -99,6 +85,9 @@ const indexQuery = graphql`
                 }
               }
             }
+          }
+          fields {
+            slug
           }
         }
       }

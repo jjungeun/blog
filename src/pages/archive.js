@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ArchiveBlock from "../components/archiveBlock"
 
 import "../utils/normalize.css"
 import "../utils/css/screen.css"
@@ -31,23 +31,7 @@ const ArchivesPage = ({ data }, location) => {
         <header className="page-head">
           <h2 className="page-head-title">Archives</h2>
         </header>
-        {Object.keys(yearDict).map(year => (
-          <div key={year}>
-            <h3>{year}</h3>
-            {yearDict[year].map(node => (
-              <li key={node.frontmatter.title}>
-                <Link
-                  className="archive-title"
-                  to={node.fields.slug}
-                  activeStyle={{ color: "red" }}
-                >
-                  {node.frontmatter.title}
-                </Link>{" "}
-                <small>{node.frontmatter.date}</small>
-              </li>
-            ))}
-          </div>
-        ))}
+        <ArchiveBlock data={data} />
       </div>
     </Layout>
   )

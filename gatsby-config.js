@@ -7,7 +7,7 @@ module.exports = {
     author: siteConfig.author,
     description: siteConfig.description,
     labels: siteConfig.labels,
-    siteUrl: urljoin(siteConfig.url, siteConfig.prefix),
+    siteUrl: siteConfig.url,
     social: {
       github: siteConfig.github,
     },
@@ -92,12 +92,6 @@ module.exports = {
     // `${__dirname}/src/**/!(*.d).{ts,js,jsx,tsx,md,mdx}`],
     // },
     // },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -108,7 +102,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        // icon: `${__dirname}/content/assets/gatsby-icon.png`,
+        icon: `${__dirname}/content/assets/gatsby-icon.png`,
       },
     },
     {
