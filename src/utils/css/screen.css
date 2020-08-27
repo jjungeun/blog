@@ -686,6 +686,13 @@ body {
   box-shadow: none !important;
 }
 
+/* Comment
+/* ---------------------------------------------------------- */
+.comments-wrapper {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 /* Author Archive
 /* ---------------------------------------------------------- */
 

@@ -23,9 +23,9 @@ class Utterances extends React.Component {
 
   render() {
     const { status } = this.state
-
     return (
-      <div className="comments-wrapper">
+      <div>
+        {/* <div className="comments-wrapper"> */}
         {status === "failed" && <div>Error. Please try again.</div>}
         {status === "pending" && <div>Loading script...</div>}
         <div ref={this.commentsEl} />
