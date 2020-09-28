@@ -23,13 +23,34 @@ const AboutPage = ({ data }, location) => {
           <h3 id="dynamic-styles">portfolio</h3>
           <h5>2020</h5>
           <p>
-            <li>서울42 참여</li>
+            <li>
+              <a href="http://github.com/kuberkuber">쿠버쿠버</a>
+            </li>
+            <div style={subStyle}>
+              쿠버네티스를 이용한 웹 기반의 오픈소스 자동배포 및 테스트 프로젝트
+              <br />
+              AWS, Terraform, Node.js, Express, React, TypeScript
+              <br />
+              AWS 쿠버네티스 인프라 환경 구성
+              <br />
+              쿠버네티스 API를 사용하여 웹 기반 배포 파이프라인 구축
+              <br />
+              한국 컴퓨터 정보학회에 프로젝트 관련 논문 투고
+            </div>
           </p>
           <p>
-            <li>캡스톤 프로젝트</li>
-          </p>
-          <p>
-            <li>논문 or 인턴</li>
+            <li>
+              <a href="https://github.com/LeeJuhae/Program_42">
+                API를 사용한 평가 알림 슬랙봇 개발
+              </a>
+            </li>
+            <div style={subStyle}>
+              API를 사용하여 평가 정보를 보여주는 슬랙봇 개발
+              <br />
+              Flask, OAuth, CronJob, AWS
+              <br />
+              OAuth로 사용자 관리 및 스케줄링하는 백엔드와 AWS 배포 담당
+            </div>
           </p>
           <h5>2019</h5>
           <p>
@@ -48,9 +69,6 @@ const AboutPage = ({ data }, location) => {
           <p>
             <li>회사 학부연구생, 인턴</li>
             <div style={subStyle}>
-              데이터 분석을 위한 책 집필(위키북스) - 파이썬언어 부분과 데이터
-              전처리 부분
-              <br />
               학습할 데이터 마이닝(크롤링)과 전처리, MySQL DB
               <br />
               데이터 분석과 학습을 위한 엘라스틱 서치 멀티노드 환경 구성
@@ -65,25 +83,25 @@ const AboutPage = ({ data }, location) => {
               <a href="https://github.com/soda-infra">Aladdin</a>
             </li>
             <div style={subStyle}>
+              React, Typescript, Go
+              <br />
               오픈소스인 kiali 커스터마이징하여 쿠버네티스 기반의 마이크로서비스
               클러스터 모니터링 서비스개발
               <br />
-              기존엔 네트워크 모니터링만 되었지만 각 노드의 인프라 관련
-              정보(pod별 cpu사용율, 메모리 사용율 등)를 추가함
+              각 노드의 인프라 관련 정보(pod별 cpu사용율, 메모리 사용율 등)를
+              추가
               <br />
-              React, Typescript, Go
-              <br />
+              오픈인프라 경진대회 금상 수상
             </div>
           </p>
           <p>
-            <li>개인 프로젝트로 JS와 React공부</li>
+            <li>
+              <a href="https://github.com/jjungeun/blog">개인 블로그</a>
+            </li>
             <div style={subStyle}>
-              <a href="https://github.com/jjungeun/todolist">Todolist</a>
-              <br />
-              <a href="https://github.com/jjungeun/webpage">Webpage</a>
-              <br />
-              <a href="https://github.com/jjungeun/blog">blog</a>
-              <br />
+              Graph QL, React
+              <br />글 태그 기능, 카테고리 기능, 시간순으로 글을 정렬해서
+              보여주는 아카이브기능, 댓글 기능을 추가
             </div>
           </p>
           <h5>2018</h5>
@@ -92,15 +110,19 @@ const AboutPage = ({ data }, location) => {
               객체지향 공부를 위한 Round-Trip Engineering기반의 UML, 소스코드
               컨버터
             </li>
-            <div style={subStyle}>Java로 파싱하는 부분</div>
+            <div style={subStyle}>Java로 파싱하는 부분 담당</div>
           </p>
           <p>
             <li>IOT기반의 따릉이 헬멧관리 모니터링 서비스</li>
-            <div style={subStyle}>SpringBoot 백엔드</div>
+            <div style={subStyle}>
+              SpringBoot 백엔드 담당
+              <br />
+              남양주 해커톤 장려상 수상
+            </div>
           </p>
           <p>
             <li>클립보드와 Google Vision API기반 일정 등록 자동화 서비스</li>
-            <div style={subStyle}>안드로이드와 Google Vision API부분</div>
+            <div style={subStyle}>안드로이드와 Google Vision API부분 담당</div>
           </p>
         </div>
       </article>
