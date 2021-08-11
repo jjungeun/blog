@@ -67,18 +67,6 @@ const AboutPage = ({ data }, location) => {
             <div style={subStyle}>Django로 Dashboard부분 커스터마이징</div>
           </p>
           <p>
-            <li>회사 학부연구생, 인턴</li>
-            <div style={subStyle}>
-              학습할 데이터 마이닝(크롤링)과 전처리, MySQL DB
-              <br />
-              데이터 분석과 학습을 위한 엘라스틱 서치 멀티노드 환경 구성
-              <br />
-              React와 Firebase로 총선관련하여 데이터분석한 결과를 보여줄
-              데모페이지 개발
-              <br />
-            </div>
-          </p>
-          <p>
             <li>
               <a href="https://github.com/soda-infra">Aladdin</a>
             </li>
@@ -105,21 +93,6 @@ const AboutPage = ({ data }, location) => {
             </div>
           </p>
           <h5>2018</h5>
-          <p>
-            <li>
-              객체지향 공부를 위한 Round-Trip Engineering기반의 UML, 소스코드
-              컨버터
-            </li>
-            <div style={subStyle}>Java로 파싱하는 부분 담당</div>
-          </p>
-          <p>
-            <li>IOT기반의 따릉이 헬멧관리 모니터링 서비스</li>
-            <div style={subStyle}>
-              SpringBoot 백엔드 담당
-              <br />
-              남양주 해커톤 장려상 수상
-            </div>
-          </p>
           <p>
             <li>클립보드와 Google Vision API기반 일정 등록 자동화 서비스</li>
             <div style={subStyle}>안드로이드와 Google Vision API부분 담당</div>
