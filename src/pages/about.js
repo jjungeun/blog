@@ -92,11 +92,11 @@ const AboutPage = ({ data }, location) => {
               보여주는 아카이브기능, 댓글 기능을 추가
             </div>
           </p>
-          <h5>2018</h5>
+          {/* <h5>2018</h5>
           <p>
             <li>클립보드와 Google Vision API기반 일정 등록 자동화 서비스</li>
             <div style={subStyle}>안드로이드와 Google Vision API부분 담당</div>
-          </p>
+          </p> */}
         </div>
       </article>
     </Layout>
